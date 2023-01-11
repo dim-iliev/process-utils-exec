@@ -1,0 +1,7 @@
+src
+tests
+# AVA tmp files
+dist/cjs/test.js
+tmp
+tsconfig.tsbuildinfo
+dist/tsconfig.tsbuildinfo
