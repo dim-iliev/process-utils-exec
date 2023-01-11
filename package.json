@@ -3,21 +3,17 @@
   "version": "1.0.0",
   "description": "Super small convenience package to call `exec` and return the response as a promise.",
   "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
   "exports": {
-    ".": {
-      "default": "./dist/cjs/index.js",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
-    },
-    "./types": "./types/index.d.ts"
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js"
   },
   "types": "./types/index.d.ts",
   "scripts": {
     "test": "tsc && ava && rm -r ./tmp",
     "build:cjs": "tsc -p ./tsconfig.cjs.json",
-    "build:esm": "tsc -p ./tsconfig.esm.json",
-    "fmt": "npx prettier -w ./src/*.ts *.json ./tests/*.ts ava.config.js",
-    "prepublish": "yarn build:cjs && yarn build:esm"
+    "build:esm": "tsc -p ./tsconfig.esm.json && cp ./module.json ./dist/esm/package.json",
+    "fmt": "npx prettier -w ./src/*.ts *.json ./tests/*.ts ava.config.js"
   },
   "keywords": [
     "child_process",
