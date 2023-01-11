@@ -1,6 +1,6 @@
 {
   "name": "@dim.iliev/process-utils-exec",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Super small convenience package to call `exec` and return the response as a promise.",
   "main": "./dist/cjs/index.js",
   "exports": {
